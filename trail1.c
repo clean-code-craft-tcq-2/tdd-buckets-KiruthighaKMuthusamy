@@ -8,10 +8,10 @@ int countInContinuousRange(int lowerlimit, int upperlimit)
     int Count=0;
     for(int readingIterator = 0; readingIterator<= 8 ;readingIterator++)
     {
-    if ((readings[readingIterator]>=lowerlimit ) && (readings[readingIterator]<=upperlimit ))
+  /*  if ((readings[readingIterator]>=lowerlimit ) && (readings[readingIterator]<=upperlimit ))
     {
         Count++;
-    }
+    }*/
     }
    
      return Count;
@@ -27,7 +27,7 @@ int high = 5;
   
     int a = countInContinuousRange(low,high);
    //   printf("%d\n",a);
-       assert((countInContinuousRange(3,5)==4)==1);
+     //  assert((countInContinuousRange(3,5)==4)==1);
        sprintf(buff,"%d-%d,%d",low,high,a);
        printf("%s",buff);
   /*    FILE *fp;
