@@ -8,10 +8,10 @@ int countInContinuousRange(int lowerlimit, int upperlimit)
     int Count=0;
     for(int readingIterator = 0; readingIterator<= 8 ;readingIterator++)
     {
-  /*  if ((readings[readingIterator]>=lowerlimit ) && (readings[readingIterator]<=upperlimit ))
+   if ((readings[readingIterator]>=lowerlimit ))// && (readings[readingIterator]<=upperlimit ))
     {
         Count++;
-    }*/
+    }
     }
    
      return Count;
