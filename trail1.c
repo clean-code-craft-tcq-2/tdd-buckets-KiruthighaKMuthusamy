@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <assert.h>
+#include <stdbool.h>
 
 int readings[] = {3,3,5,4,10,11,12};
-_Bool checkLowerLimit(int lowerlimit,int readings)
+bool checkLowerLimit(int lowerlimit,int readings)
 {
     if (readings>=lowerlimit)
     return 1;
@@ -10,14 +11,14 @@ _Bool checkLowerLimit(int lowerlimit,int readings)
     return 0;
 
 }
-_Bool checkUpperLimit(int upperlimit,int readings)
+bool checkUpperLimit(int upperlimit,int readings)
 {
     if(readings<=upperlimit)
     return 1;
     else 
     return 0;
 }
-int checkWithinRange(_Bool Lowerresult,_Bool Upperresult)
+int checkWithinRange(bool Lowerresult,bool Upperresult)
 {
     if (Lowerresult && Upperresult)
     return(1);
@@ -30,8 +31,8 @@ int countInContinuousRange(int lowerlimit, int upperlimit)
     int Count=0;
     for(int readingIterator = 0; readingIterator<= 8 ;readingIterator++)
     {
-       _Bool Lowerresult = checkLowerLimit(lowerlimit,readings[readingIterator]);
-    _Bool   Upperresult =  checkUpperLimit(upperlimit,readings[readingIterator]);
+       bool Lowerresult = checkLowerLimit(lowerlimit,readings[readingIterator]);
+    bool   Upperresult =  checkUpperLimit(upperlimit,readings[readingIterator]);
      Count +=  checkWithinRange(Lowerresult,Upperresult);
     }
    
