@@ -1,6 +1,3 @@
-#include"frequentCurrentRange.h"
-
-
 int countInContinuousRange(int lowRange,int highRange)
 
 {
