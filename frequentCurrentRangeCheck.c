@@ -16,7 +16,7 @@ int findContinuousSamples(int *readings,int length)
         {     
 		   highRange = i;
 	       readingsCount = countInContinuousRange(lowRange,highRange);
-		   	   
+		   	numOfContinuosSamples++;   
         }
            
     }
