@@ -1,10 +1,17 @@
+struct RangeAndReadings
+{
+     int LowerSample;
+     int UpperSample;
+     int RangeCount
+};
+
 int countInContinuousRange(int lowRange,int highRange)
 
 {
     return highRange-lowRange;
 }
-int findContinuousSamples(int *readings,int length)
-{
+RangeAndReadings* findContinuousSamples(int *readings,int length)
+{   struct RangeAndReadings currentRangeReadings[15];
     int lowRange = 0;
     int highRange = 0;
     int readingsCount = 0;
@@ -15,17 +22,20 @@ int findContinuousSamples(int *readings,int length)
 	 if(i==length-1)
         {     
 		   highRange = i;
-	       readingsCount = countInContinuousRange(lowRange,highRange);
-		   	numOfContinuosSamples++;   
+	         readingsCount = countInContinuousRange(lowRange,highRange);
+		 numOfContinuosSamples++;
+		 currentRangeReadings[numOfContinuosSamples].LowerSample = readingsCount[lowRange];
+		 currentRangeReadings[numOfContinuosSamples].UpperSample = readingsCount[highRange];
+		 currentRangeReadings[numOfContinuosSamples].RangeCount = readingsCount;
         }
            
     }
-	return numOfContinuosSamples;
+	return currentRangeReadings;
 }
 
-int checkRangeAndReadings(int *readings,int length)
-{   int numOfContinuosSamples =0;
-    numOfContinuosSamples=  findContinuousSamples(readings, length);
-    return numOfContinuosSamples;
+RangeAndReadings* checkRangeAndReadings(int *readings,int length)
+{  
+   return(  findContinuousSamples(readings, length));
+    
 }
 
