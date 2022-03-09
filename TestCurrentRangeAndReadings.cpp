@@ -14,14 +14,14 @@ TEST_CASE("Checks the charging current range and its occurences with small sampl
 TEST_CASE("Checks the charging current range and its occurences with few more samples") {
 	int chargingCurrentSamples[] = {4,5,11,12};
 	int expectedNumOfRange = 2;
-	int actualNumOfRange = checkRangeAndReadings(chargingCurrentSamples,2);
+	int actualNumOfRange = checkRangeAndReadings(chargingCurrentSamples,4);
 	REQUIRE(expectedNumOfRange == actualNumOfRange);
 }
 
 TEST_CASE("Checks the charging current range and its occurences with given samples") {
 	int chargingCurrentSamples[] = {3,3,5,4,10,11,12};
 	int expectedNumOfRange = 2;
-	int actualNumOfRange = checkRangeAndReadings(chargingCurrentSamples,2);
+	int actualNumOfRange = checkRangeAndReadings(chargingCurrentSamples,7);
 	REQUIRE(expectedNumOfRange == actualNumOfRange);
 }
 
