@@ -10,7 +10,7 @@ int countInContinuousRange(int lowRange,int highRange)
 {
     return highRange-lowRange+1;
 }
-int findContinuousSamples(int *readings,size_t length)
+int findContinuousSamples(int *readings,int length)
 {
     int lowRange = 0;
     int highRange = 0;
