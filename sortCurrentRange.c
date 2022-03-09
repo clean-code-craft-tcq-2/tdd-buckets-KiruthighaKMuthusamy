@@ -12,7 +12,7 @@ void swapIfInWrongOrder (int *firstElement,int *secondElement)
 }
 
 
-void arraySort(int *readings,size_t length)
+void arraySort(int *readings,int length)
 { 
     for (int majorIndex = 0; majorIndex<length; majorIndex++)
     {
