@@ -60,9 +60,9 @@ rangeAndReadings* findRangeAndReadings (int *readings, int length,bool(*fpValida
   else
   {
       fpPrintErrorMessage();
-	  numOfContinuosSamples[0].upperLimit = (int)"/0";
-      numOfContinuosSamples[0].lowerLimit = (int)"/0";
-      numOfContinuosSamples[0].readingsCount = (int)"/0";
+	  numOfContinuosSamples[0].upperLimit = 0;
+      numOfContinuosSamples[0].lowerLimit =  0;
+      numOfContinuosSamples[0].readingsCount = 0;
   }
    
 }
