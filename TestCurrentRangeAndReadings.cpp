@@ -42,7 +42,7 @@ TEST_CASE("Checks the charging current range and its occurences with large sorte
 // Attempt 4: 	
 TEST_CASE("Checks the charging current range and its occurences with large unsorted samples") {                                      //SAME TEST CASE  PASSED for the model input given
 	int chargingCurrentSamples[] = {3,3,5,4,10,11,12};
-       rangeAndReadings expectedOutput[2] ={{3,5,4},{10,12,3}};
+       rangeAndReadings expectedOutput[2] ={{5,3,4},{12,10,3}};
 	rangeAndReadings *actualOutput = findRangeAndReadings (chargingCurrentSamples,7,&validateArray,&printOnConsole,&printErrorMessage);
 	isActualOutputExpectedOutputsame(expectedOutput,actualOutput,2);
 	}
