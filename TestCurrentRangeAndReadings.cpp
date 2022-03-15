@@ -49,7 +49,7 @@ TEST_CASE("Checks the charging current range and its occurences with large unsor
 	
 	TEST_CASE("Checks the charging current range for invalid Array") {                                      //SAME TEST CASE  PASSED for invalid Array
 	int chargingCurrentSamples[] = {3,3,5,4,10,11,121444};
-    rangeAndReadings expectedOutput[1] ={{"/0","/0","/0"}};
+    rangeAndReadings expectedOutput[1] ={{(int)"/0",(int)"/0",(int)"/0"}};
 	rangeAndReadings *actualOutput = findRangeAndReadings (chargingCurrentSamples,7,&validateArray,&printOnConsole,&printErrorMessage);
 	REQUIRE(expectedOutput[0].upperLimit == actualOutput[0].upperLimit);
 	REQUIRE(expectedOutput[0].lowerLimit == actualOutput[0].lowerLimit);
