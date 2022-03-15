@@ -1,6 +1,6 @@
 # Developer's Hint to the reviewer:
 The code gets the input and validates the array.
-**Validation condition:** should be an integer value between  0 and 65535
+**Validation condition:** : Input array should be an integer value between  0 and 65535
 
 If the validation is TRUE then sort the given input , calculates the continuous ranges and readings , store it in a structure and print the output.
 
