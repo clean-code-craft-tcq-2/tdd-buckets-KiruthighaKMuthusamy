@@ -1,3 +1,14 @@
+# Developer's Hint:
+
+The code gets the input and validates the array 
+Validation condition: shpuld be an integer vlaue between  0 and 65535
+If the validation is TRUE then sort the given input and calculates the continuous ranges and readings and store it in a structure
+If the validation is FALSE then exit the code after printing "Input is Invalid"
+
+For the test purpose, the PrintingErrorMessage function is stubbed with another function where exiting the program is not used.
+
+
+
 # Test Driven Ranges
 
 The charging current varies during the process of charging.
@@ -52,5 +63,5 @@ Start Test-driven approach
 1. Refactor any assumptions, continue to pass this test. Do not add any code without a corresponding test.
 
 
-## Developer Hint
+
 
