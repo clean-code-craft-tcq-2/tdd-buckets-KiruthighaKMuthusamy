@@ -31,9 +31,9 @@ rangeAndReadings* findContinuousSamples (int *readings, int length)
 	{
 	  highRange = i;
 	  readingsCount = countInContinuousRange (lowRange, highRange);
-	  output[numOfContinuosSamples].upperLimit = readings[highRange];
-	  output[numOfContinuosSamples].lowerLimit = readings[lowRange];
-	  output[numOfContinuosSamples].readingsCount = readingsCount;
+	//  output[numOfContinuosSamples].upperLimit = readings[highRange];
+	//  output[numOfContinuosSamples].lowerLimit = readings[lowRange];
+	//  output[numOfContinuosSamples].readingsCount = readingsCount;
 	  printOnConsole (output,numOfContinuosSamples);
 	  numOfContinuosSamples++;
 	}
