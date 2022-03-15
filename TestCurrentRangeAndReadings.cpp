@@ -3,7 +3,7 @@
 #include "test-framework/catch.hpp"
 #include"frequentCurrentRange.h"
 
-isActualOutputExpectedOutputsame(rangeAndReadings *expectedOutput,rangeAndReadings *actualOutput,int arrayLength)
+void isActualOutputExpectedOutputsame(rangeAndReadings *expectedOutput,rangeAndReadings *actualOutput,int arrayLength)
 {
 	for(i=0;i<arrayLength;i++)
 	{
