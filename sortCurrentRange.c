@@ -25,7 +25,7 @@ void swapIfInWrongOrder (int *firstElement, int *secondElement)
 
 
 
-void arraySort (int *duplicateArray, int length)
+void sortInputArray(int *duplicateArray, int length)
 {
     for (int majorIndex = 0; majorIndex < length; majorIndex++)
     {
