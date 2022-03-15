@@ -15,8 +15,8 @@ int checkRangeAndReadings(int *readings,int length);
 // Attempt 2. 
 TEST_CASE("Checks the charging current range and its occurences with small samples") {                                      //SAME TEST CASE 
 	int chargingCurrentSamples[] = {4,5};
-        rangeAndReadings *expectedOutput ={4,5,2};
-	rangeAndReadings* actualOutput = checkRangeAndReadings(chargingCurrentSamples,2);
+        rangeAndReadings expectedOutput ={4,5,2};
+	rangeAndReadings* actualOutput = findRangeAndReadings (chargingCurrentSamples,2);
 	REQUIRE(expectedOutput.upperLimit == actualOutput.upperLimit);
 	REQUIRE(expectedOutput.lowerLimit == actualOutput.lowerLimit);
 	REQUIRE(expectedOutput.readingsCount == actualOutput.readingsCount);
