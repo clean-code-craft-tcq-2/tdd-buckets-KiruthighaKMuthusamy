@@ -26,7 +26,7 @@ rangeAndReadings* findContinuousSamples (int *readings, int length, void(*fpPrin
 	{
 	  highRange = i - 1;
 	  readingsCount = countInContinuousRange (lowRange, highRange);
-	    storeCalculatedRageReadings(readings[highRange],readings[lowRange],readingsCount,numOfContinuosSamples,output);
+	    storeCalculatedRageReadings(readings[highRange],readings[lowRange],readingsCount,numOfContinuosSamples,rangeAndNoOfReadings);
       fpPrintOnConsole (rangeAndNoOfReadings,numOfContinuosSamples); 
 	  numOfContinuosSamples++;
 	  highRange = i;
@@ -38,7 +38,7 @@ rangeAndReadings* findContinuousSamples (int *readings, int length, void(*fpPrin
 	{
 	  highRange = i;
 	  readingsCount = countInContinuousRange (lowRange, highRange);
-	    storeCalculatedRageReadings(readings[highRange],readings[lowRange],readingsCount,numOfContinuosSamples,output);
+	    storeCalculatedRageReadings(readings[highRange],readings[lowRange],readingsCount,numOfContinuosSamples,rangeAndNoOfReadings);
 	  fpPrintOnConsole (rangeAndNoOfReadings,numOfContinuosSamples);
 	  numOfContinuosSamples++;
 	}
@@ -54,15 +54,15 @@ rangeAndReadings* checkRangeAndReadings (int *readings, int length,bool(*fpValid
   {
    int* duplicateArray = copyInputArray(readings,  length);
   sortInputArray(duplicateArray, length);
-  numOfContinuosSamples = findContinuousSamples (duplicateArray, length);
+   numOfContinuosSamples = findContinuousSamples (duplicateArray, length,fpPrintOnConsole);
   return numOfContinuosSamples;
   }
   else
   {
       fpPrintErrorMessage();
-	  numOfContinuosSamples[0].upperLimit = "/0";
-      numOfContinuosSamples[0].lowerLimit = "/0";
-      numOfContinuosSamples[0].readingsCount = "/0";
+	  numOfContinuosSamples[0].upperLimit = (int)"/0";
+      numOfContinuosSamples[0].lowerLimit = (int)"/0";
+      numOfContinuosSamples[0].readingsCount = (int)"/0";
   }
    
 }
