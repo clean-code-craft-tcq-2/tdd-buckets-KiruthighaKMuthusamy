@@ -46,7 +46,7 @@ rangeAndReadings* findContinuousSamples (int *readings, int length, void(*fpPrin
   return rangeAndNoOfReadings;
 }
 
-rangeAndReadings* checkRangeAndReadings (int *readings, int length,bool(*fpValidateArray)(int* ,int ),void(*fpPrintOnConsole)(rangeAndReadings*,int) , void(*fpPrintErrorMessage)(void))
+rangeAndReadings* findRangeAndReadings (int *readings, int length,bool(*fpValidateArray)(int* ,int ),void(*fpPrintOnConsole)(rangeAndReadings*,int) , void(*fpPrintErrorMessage)(void))
 {
     rangeAndReadings* numOfContinuosSamples ;
     bool validation = fpValidateArray(readings,length);
