@@ -22,7 +22,8 @@ void isActualOutputExpectedOutputsame(rangeAndReadings *expectedOutput,rangeAndR
 	REQUIRE(expectedNumOfRange == actualNumOfRange);
 } */ //The above test failed because the actualNumOfRange is not properly incremented
 
-// Attempt 2. 
+// Attempt 2.
+/*
 TEST_CASE("Checks the charging current range and its occurences with small  samples") {                                      //SAME TEST CASE  PASSED
 	int chargingCurrentSamples[] = {4,5};
         rangeAndReadings expectedOutput[1] ={5,4,2};
@@ -30,22 +31,23 @@ TEST_CASE("Checks the charging current range and its occurences with small  samp
 	isActualOutputExpectedOutputsame(expectedOutput,actualOutput,1);
 	}
 
+// Attempt 3: 
 TEST_CASE("Checks the charging current range and its occurences with large sorted samples") {                                      //SAME TEST CASE  PASSED for the model input given
 	int chargingCurrentSamples[] = {3,3,4,5,10,11,12};
         rangeAndReadings expectedOutput[2] ={{3,5,4},{10,12,3}};
 	rangeAndReadings *actualOutput = findRangeAndReadings (chargingCurrentSamples,7,&validateArray,&printOnConsole,&printErrorMessage);
 	isActualOutputExpectedOutputsame(expectedOutput,actualOutput,2);
-	}
+	}*/
 	
-	
+// Attempt 4: 	
 TEST_CASE("Checks the charging current range and its occurences with large unsorted samples") {                                      //SAME TEST CASE  PASSED for the model input given
 	int chargingCurrentSamples[] = {3,3,5,4,10,11,12};
        rangeAndReadings expectedOutput[2] ={{3,5,4},{10,12,3}};
 	rangeAndReadings *actualOutput = findRangeAndReadings (chargingCurrentSamples,7,&validateArray,&printOnConsole,&printErrorMessage);
 	isActualOutputExpectedOutputsame(expectedOutput,actualOutput,2);
 	}
-	
-	TEST_CASE("Checks the charging current range for invalid Array") {                                      //SAME TEST CASE  PASSED for invalid Array
+// Attempt 5: 	
+TEST_CASE("Checks the charging current range for invalid Array") {                                      //SAME TEST CASE  PASSED for invalid Array
 	int chargingCurrentSamples[] = {3,3,5,4,10,11,121444};
     rangeAndReadings expectedOutput[1] ={0,0,0};
 	rangeAndReadings *actualOutput = findRangeAndReadings (chargingCurrentSamples,7,&validateArray,&printOnConsole,&printErrorMessage);
