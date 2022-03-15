@@ -17,7 +17,7 @@ TEST_CASE("Checks the charging current range and its occurences with small sampl
 	int chargingCurrentSamples[] = {4,5};
         rangeAndReadings expectedOutput[1] ={5,4,2};
 	rangeAndReadings *actualOutput = findRangeAndReadings (chargingCurrentSamples,2);
-	//REQUIRE(expectedOutput[0].upperLimit == actualOutput[0].upperLimit);
-	//REQUIRE(expectedOutput[0].lowerLimit == actualOutput[0].lowerLimit);
-	//REQUIRE(expectedOutput[0].readingsCount == actualOutput[0].readingsCount);
+	REQUIRE(expectedOutput[0].upperLimit == actualOutput[0].upperLimit);
+	REQUIRE(expectedOutput[0].lowerLimit == actualOutput[0].lowerLimit);
+	REQUIRE(expectedOutput[0].readingsCount == actualOutput[0].readingsCount);
 	}
