@@ -9,7 +9,7 @@ void printOnConsole (rangeAndReadings* rangeAndNoOfReadings,int numOfContinuosSa
 
 void printErrorMessage ()
 {
-   printf(stderr, "Input is Invalid");
+   printf("Input is Invalid");
   exit(EXIT_FAILURE);
   
 }
