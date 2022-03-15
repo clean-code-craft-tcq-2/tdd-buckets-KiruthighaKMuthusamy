@@ -11,7 +11,7 @@ typedef struct RangeAndReadings
 
 } rangeAndReadings;
 
-rangeAndReadings* checkRangeAndReadings (int *readings, int length,bool(*fpValidateArray)(int* ,int ),void(*fpPrintOnConsole)(rangeAndReadings*,int) , void(*fpPrintErrorMessage)(void))
+rangeAndReadings* checkRangeAndReadings (int *readings, int length,bool(*fpValidateArray)(int* ,int ),void(*fpPrintOnConsole)(rangeAndReadings*,int) , void(*fpPrintErrorMessage)(void));
 bool validateArray(int *readings,int length);
 int * copyInputArray(int *readings, int length);
 void sortInputArray (int *duplicateArray, int length);
