@@ -1,7 +1,9 @@
 # Developer's Hint to the reviewer:
-The code gets the input and validates the array .
-Validation condition: should be an integer value between  0 and 65535
+The code gets the input and validates the array.
+**Validation condition:** should be an integer value between  0 and 65535
+
 If the validation is TRUE then sort the given input , calculates the continuous ranges and readings , store it in a structure and print the output.
+
 If the validation is FALSE then exit the code after printing "Input is Invalid"
 
 For the test purpose, the PrintingErrorMessage function is stubbed with another function where exiting the program is not used.
