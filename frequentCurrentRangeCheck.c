@@ -19,26 +19,25 @@ rangeAndReadings* findContinuousSamples (int *readings, int length)
 	{
 	  highRange = i - 1;
 	  readingsCount = countInContinuousRange (lowRange, highRange);
-	  output[numOfContinuosSamples].upperLimit = highRange;
-	  output[numOfContinuosSamples].lowerLimit = lowRange;
+	  output[numOfContinuosSamples].upperLimit =readings[highRange];
+	  output[numOfContinuosSamples].lowerLimit = readings[lowRange];
 	  output[numOfContinuosSamples].readingsCount = readingsCount;
       printOnConsole (output,numOfContinuosSamples); 
 	  numOfContinuosSamples++;
 	  highRange = i;
 	  lowRange = i;
-
-
 	}
       else if (i == length - 1)
 	{
 	  highRange = i;
 	  readingsCount = countInContinuousRange (lowRange, highRange);
-	  output[numOfContinuosSamples].upperLimit = highRange;
-	  output[numOfContinuosSamples].lowerLimit = lowRange;
+	  output[numOfContinuosSamples].upperLimit = readings[highRange];
+	  output[numOfContinuosSamples].lowerLimit = readings[lowRange];
 	  output[numOfContinuosSamples].readingsCount = readingsCount;
 	  printOnConsole (output,numOfContinuosSamples);
 	  numOfContinuosSamples++;
 	}
+
 
     }
   return output;
