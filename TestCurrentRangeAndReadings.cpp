@@ -3,6 +3,16 @@
 #include "test-framework/catch.hpp"
 #include"frequentCurrentRange.h"
 
+isActualOutputExpectedOutputsame(rangeAndReadings *expectedOutput,rangeAndReadings *actualOutput,int arrayLength)
+{
+	for(i=0;i<arrayLength;i++)
+	{
+	REQUIRE(expectedOutput[i].upperLimit == actualOutput[i].upperLimit);
+	REQUIRE(expectedOutput[i].lowerLimit == actualOutput[i].lowerLimit);
+	REQUIRE(expectedOutput[i].readingsCount == actualOutput[i].readingsCount);
+	}
+}
+
 
 // Attempt 1. 
 /* TEST_CASE("Checks the charging current range and its occurences with small samples") {                                      //FAILED
@@ -17,21 +27,14 @@ TEST_CASE("Checks the charging current range and its occurences with small  samp
 	int chargingCurrentSamples[] = {4,5};
         rangeAndReadings expectedOutput[1] ={5,4,2};
 	rangeAndReadings *actualOutput = findRangeAndReadings (chargingCurrentSamples,2,&validateArray,&printOnConsole,&printErrorMessage);
-	REQUIRE(expectedOutput[0].upperLimit == actualOutput[0].upperLimit);
-	REQUIRE(expectedOutput[0].lowerLimit == actualOutput[0].lowerLimit);
-	REQUIRE(expectedOutput[0].readingsCount == actualOutput[0].readingsCount);
+	isActualOutputExpectedOutputsame(expectedOutput,actualOutput,1);
 	}
 
 TEST_CASE("Checks the charging current range and its occurences with large sorted samples") {                                      //SAME TEST CASE  PASSED for the model input given
 	int chargingCurrentSamples[] = {3,3,4,5,10,11,12};
         rangeAndReadings expectedOutput[2] ={{3,5,2},{10,12}};
 	rangeAndReadings *actualOutput = findRangeAndReadings (chargingCurrentSamples,7,&validateArray,&printOnConsole,&printErrorMessage);
-	REQUIRE(expectedOutput[0].upperLimit == actualOutput[0].upperLimit);
-	REQUIRE(expectedOutput[0].lowerLimit == actualOutput[0].lowerLimit);
-	REQUIRE(expectedOutput[0].readingsCount == actualOutput[0].readingsCount);
-	REQUIRE(expectedOutput[1].upperLimit == actualOutput[1].upperLimit);
-	REQUIRE(expectedOutput[1].lowerLimit == actualOutput[1].lowerLimit);
-	REQUIRE(expectedOutput[1].readingsCount == actualOutput[1].readingsCount);
+	isActualOutputExpectedOutputsame(expectedOutput,actualOutput,2);
 	}
 	
 	
@@ -39,19 +42,12 @@ TEST_CASE("Checks the charging current range and its occurences with large unsor
 	int chargingCurrentSamples[] = {3,3,5,4,10,11,12};
         rangeAndReadings expectedOutput[2] ={{3,5,2},{10,12}};
 	rangeAndReadings *actualOutput = findRangeAndReadings (chargingCurrentSamples,7,&validateArray,&printOnConsole,&printErrorMessage);
-	REQUIRE(expectedOutput[0].upperLimit == actualOutput[0].upperLimit);
-	REQUIRE(expectedOutput[0].lowerLimit == actualOutput[0].lowerLimit);
-	REQUIRE(expectedOutput[0].readingsCount == actualOutput[0].readingsCount);
-	REQUIRE(expectedOutput[1].upperLimit == actualOutput[1].upperLimit);
-	REQUIRE(expectedOutput[1].lowerLimit == actualOutput[1].lowerLimit);
-	REQUIRE(expectedOutput[1].readingsCount == actualOutput[1].readingsCount);
+	isActualOutputExpectedOutputsame(expectedOutput,actualOutput,2);
 	}
 	
 	TEST_CASE("Checks the charging current range for invalid Array") {                                      //SAME TEST CASE  PASSED for invalid Array
 	int chargingCurrentSamples[] = {3,3,5,4,10,11,121444};
     rangeAndReadings expectedOutput[1] ={{(int)"/0",(int)"/0",(int)"/0"}};
 	rangeAndReadings *actualOutput = findRangeAndReadings (chargingCurrentSamples,7,&validateArray,&printOnConsole,&printErrorMessage);
-	REQUIRE(expectedOutput[0].upperLimit == actualOutput[0].upperLimit);
-	REQUIRE(expectedOutput[0].lowerLimit == actualOutput[0].lowerLimit);
-	REQUIRE(expectedOutput[0].readingsCount == actualOutput[0].readingsCount);
+	isActualOutputExpectedOutputsame(expectedOutput,actualOutput,1);
 		}
