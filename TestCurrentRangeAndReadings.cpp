@@ -5,7 +5,7 @@
 
 void isActualOutputExpectedOutputsame(rangeAndReadings *expectedOutput,rangeAndReadings *actualOutput,int arrayLength)
 {
-	for(i=0;i<arrayLength;i++)
+	for(int i=0;i<arrayLength;i++)
 	{
 	REQUIRE(expectedOutput[i].upperLimit == actualOutput[i].upperLimit);
 	REQUIRE(expectedOutput[i].lowerLimit == actualOutput[i].lowerLimit);
