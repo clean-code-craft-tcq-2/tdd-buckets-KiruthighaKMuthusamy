@@ -6,7 +6,7 @@
 
 void stubPrintErrorMessage ()
 {
-   printf(stderr, "Input is Invalid");
+   printf("Input is Invalid");
   // exit(EXIT_FAILURE);  -- removed this to make BUILD and RUN pass
   
 }
