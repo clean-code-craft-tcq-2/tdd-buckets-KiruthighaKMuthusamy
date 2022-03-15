@@ -3,6 +3,13 @@
 #include "test-framework/catch.hpp"
 #include"frequentCurrentRange.h"
 
+
+void stubPrintErrorMessage ()
+{
+   fprintf(stderr, "Input is Invalid");
+  // exit(EXIT_FAILURE);  -- removed this to make BUILD and RUN pass
+  
+}
 void isActualOutputExpectedOutputsame(rangeAndReadings *expectedOutput,rangeAndReadings *actualOutput,int arrayLength)
 {
 	for(int i=0;i<arrayLength;i++)
@@ -50,6 +57,6 @@ TEST_CASE("Checks the charging current range and its occurences with large unsor
 TEST_CASE("Checks the charging current range for invalid Array") {                                      //SAME TEST CASE  PASSED for invalid Array
 	int chargingCurrentSamples[] = {3,3,5,4,10,11,121444};
     rangeAndReadings expectedOutput[1] ={0,0,0};
-	rangeAndReadings *actualOutput = findRangeAndReadings (chargingCurrentSamples,7,&validateArray,&printOnConsole,&printErrorMessage);
+	rangeAndReadings *actualOutput = findRangeAndReadings (chargingCurrentSamples,7,&validateArray,&printOnConsole,&stubPrintErrorMessage);
 	isActualOutputExpectedOutputsame(expectedOutput,actualOutput,1);
 		}
