@@ -24,7 +24,7 @@ TEST_CASE("Checks the charging current range and its occurences with small  samp
 
 TEST_CASE("Checks the charging current range and its occurences with large sorted samples") {                                      //SAME TEST CASE  PASSED for the model input given
 	int chargingCurrentSamples[] = {3,3,4,5,10,11,12};
-        rangeAndReadings expectedOutput[1] ={{3,5,2},{10,12}};
+        rangeAndReadings expectedOutput[2] ={{3,5,2},{10,12}};
 	rangeAndReadings *actualOutput = findRangeAndReadings (chargingCurrentSamples,7,&validateArray,&printOnConsole,&printErrorMessage);
 	REQUIRE(expectedOutput[0].upperLimit == actualOutput[0].upperLimit);
 	REQUIRE(expectedOutput[0].lowerLimit == actualOutput[0].lowerLimit);
@@ -37,7 +37,7 @@ TEST_CASE("Checks the charging current range and its occurences with large sorte
 	
 TEST_CASE("Checks the charging current range and its occurences with large unsorted samples") {                                      //SAME TEST CASE  PASSED for the model input given
 	int chargingCurrentSamples[] = {3,3,5,4,10,11,12};
-        rangeAndReadings expectedOutput[1] ={{3,5,2},{10,12}};
+        rangeAndReadings expectedOutput[2] ={{3,5,2},{10,12}};
 	rangeAndReadings *actualOutput = findRangeAndReadings (chargingCurrentSamples,7,&validateArray,&printOnConsole,&printErrorMessage);
 	REQUIRE(expectedOutput[0].upperLimit == actualOutput[0].upperLimit);
 	REQUIRE(expectedOutput[0].lowerLimit == actualOutput[0].lowerLimit);
