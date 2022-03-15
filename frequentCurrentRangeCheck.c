@@ -55,14 +55,15 @@ rangeAndReadings* findRangeAndReadings (int *readings, int length,bool(*fpValida
    int* duplicateArray = copyInputArray(readings,  length);
   sortInputArray(duplicateArray, length);
    numOfContinuosSamples = findContinuousSamples (duplicateArray, length,fpPrintOnConsole);
-  return numOfContinuosSamples;
+
   }
   else
   {
       fpPrintErrorMessage();
-	  numOfContinuosSamples[0].upperLimit = 0;
+      numOfContinuosSamples[0].upperLimit = 0;
       numOfContinuosSamples[0].lowerLimit =  0;
       numOfContinuosSamples[0].readingsCount = 0;
   }
+	  return numOfContinuosSamples;
    
 }
