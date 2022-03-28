@@ -18,7 +18,6 @@ void sortInputArray (int *duplicateArray, int length);
 void swapIfInWrongOrder (int *firstElement, int *secondElement);
 rangeAndReadings* findContinuousSamples (int *readings, int length, void(*fpPrintOnConsole)(rangeAndReadings*,int));
 void storeCalculatedRageReadings(int upperReadings,int lowerReadings,int readingsCount,int numOfContinuosSamples, rangeAndReadings *output);
-int countInContinuousRange (int lowRange, int highRange);
 void printOnConsole (rangeAndReadings* output,int numOfContinuosSamples);
 void printErrorMessage ();
 
