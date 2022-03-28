@@ -33,7 +33,7 @@ rangeAndReadings* findContinuousSamples (int *readings, int length, void(*fpPrin
 	{
 	    
 	          numOfContinuosSamples++;
-	          output[numOfContinuosSamples].readingsCount++;
+	          rangeAndNoOfReadings [numOfContinuosSamples].readingsCount++;
 		  rangeAndNoOfReadings [numOfContinuosSamples].lowerLimit = readings[i+1] ;
 		  rangeAndNoOfReadings [numOfContinuosSamples].upperLimit = readings[i+1] ;
 	 
