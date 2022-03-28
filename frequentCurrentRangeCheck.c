@@ -5,20 +5,14 @@ int countInContinuousRange (int lowRange, int highRange)
   return highRange - lowRange + 1;
 }
 
-void storeCalculatedRageReadings(int upperReadings,int lowerReadings,int readingsCount,int numOfContinuosSamples, rangeAndReadings *output)
-{
-   	  output[numOfContinuosSamples].upperLimit = upperReadings;
-	  output[numOfContinuosSamples].lowerLimit = lowerReadings;
-	  output[numOfContinuosSamples].readingsCount = readingsCount;
-	  
-}
 rangeAndReadings* findContinuousSamples (int *readings, int length, void(*fpPrintOnConsole)(rangeAndReadings*,int))
 {
   rangeAndReadings *rangeAndNoOfReadings =
     (rangeAndReadings *) calloc (10, sizeof (rangeAndReadings));
 
   int  numOfContinuosSamples = 0;
-
+    rangeAndNoOfReadings[numOfContinuosSamples].lowerLimit = readings[0];
+    rangeAndNoOfReadings[numOfContinuosSamples].readingsCount =1;
   
   for (int i = 0; i < length-1 ; i++)
     {
@@ -30,14 +24,12 @@ rangeAndReadings* findContinuousSamples (int *readings, int length, void(*fpPrin
 
 	}
       else
-	{
-	    
+	{    
 	          numOfContinuosSamples++;
 	          rangeAndNoOfReadings [numOfContinuosSamples].readingsCount++;
 		  rangeAndNoOfReadings [numOfContinuosSamples].lowerLimit = readings[i+1] ;
 		  rangeAndNoOfReadings [numOfContinuosSamples].upperLimit = readings[i+1] ;
-	 
-	}
+	 	}
 
     }
     fpPrintOnConsole (rangeAndNoOfReadings ,numOfContinuosSamples);
