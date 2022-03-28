@@ -17,8 +17,7 @@ rangeAndReadings* findContinuousSamples (int *readings, int length, void(*fpPrin
   rangeAndReadings *rangeAndNoOfReadings =
     (rangeAndReadings *) calloc (10, sizeof (rangeAndReadings));
 
-  int lowRange = 0, highRange = 0, readingsCount = 0, numOfContinuosSamples =
-    0;
+  int  numOfContinuosSamples = 0;
 
   
   for (int i = 0; i < length-1 ; i++)
@@ -41,7 +40,7 @@ rangeAndReadings* findContinuousSamples (int *readings, int length, void(*fpPrin
 	}
 
     }
-    printOnConsole (rangeAndNoOfReadings ,numOfContinuosSamples);
+    fpPrintOnConsole (rangeAndNoOfReadings ,numOfContinuosSamples);
   return rangeAndNoOfReadings;
 }
 
