@@ -14,4 +14,4 @@ float calculateResolution (float PhyMin, float PhyMax, float InternalMax);
 float executeConversion (int RawValue, compu_formula * coEfficients);
 float calculateRoundoffValue (float phyValue);
 int createAbsoluteArray (float roundedPhyValue);
-float *conversionInternalToPhysical (float *rawValues,int arraysize, int A2D_resolution,float PhyMin, float PhyMax,void(*fpPrintErrorMessage)(void));
+int *conversionInternalToPhysical (float *rawValues,int arraysize, int A2D_resolution,float PhyMin, float PhyMax,void(*fpPrintErrorMessage)(void));
