@@ -23,20 +23,20 @@ float calculateRoundoffValue (float phyValue)
      return roundedValue;
 }
 
-float calculateAbsoluteValue (float roundedPhyValue)
+int calculateAbsoluteValue (float roundedPhyValue)
 {
-   float absValue = abs(roundedPhyValue);
+   int absValue = (int)abs(roundedPhyValue);
    return absValue;
 }
 
 
-float *conversionInternalToPhysical (float *rawValues,int arraysize, int A2D_resolution,float PhyMin, float PhyMax,void(*fpPrintErrorMessage)(void))
+int *conversionInternalToPhysical (float *rawValues,int arraysize, int A2D_resolution,float PhyMin, float PhyMax,void(*fpPrintErrorMessage)(void))
 {
 
   compu_formula* compu_coEfficients = (compu_formula *) calloc (1, sizeof (compu_formula));
   float* phyValue =  (float *) calloc (arraysize, sizeof (float));
   float* roundedPhyValue =  (float *) calloc (arraysize, sizeof (float));
-  float* absValue =  (float *) calloc (arraysize, sizeof (float));
+  int* absValue =  (int *) calloc (arraysize, sizeof (int));
   int InternalMax = calculateInternalMax (A2D_resolution);
   
   compu_coEfficients->offset = PhyMin;
@@ -56,3 +56,4 @@ float *conversionInternalToPhysical (float *rawValues,int arraysize, int A2D_res
       
    return absValue;
 }
+ 
