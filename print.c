@@ -1,12 +1,15 @@
 #include"frequentCurrentRange.h"
 
-void printOnConsole (rangeAndReadings* rangeAndNoOfReadings,int numOfContinuosSamples)
+void printOnConsole (rangeAndReadings* input,int numOfContinuosSamples)
+			 
 {
+    for (int i = 0; i <= numOfContinuosSamples; i++)
+    {
   char buff[17];
-  sprintf (buff, "%d-%d,%d\n", rangeAndNoOfReadings[numOfContinuosSamples].lowerLimit, rangeAndNoOfReadings[numOfContinuosSamples].upperLimit, rangeAndNoOfReadings[numOfContinuosSamples].readingsCount);
- printf ("%s", buff);
+  sprintf (buff, "%d-%d,%d\n", input[i].lowerLimit, input[i].upperLimit, input[i].readingsCount);
+  printf ("%s", buff);
+    }
 }
-
 void printErrorMessage ()
 {
    printf("Input is Invalid");
