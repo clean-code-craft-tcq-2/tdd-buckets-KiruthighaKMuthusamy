@@ -20,29 +20,28 @@ rangeAndReadings* findContinuousSamples (int *readings, int length, void(*fpPrin
   int lowRange = 0, highRange = 0, readingsCount = 0, numOfContinuosSamples =
     0;
 
-  for (int i = 1; i < length; i++)
+  
+  for (int i = 0; i < length-1 ; i++)
     {
-     if (readings[i] - readings[i - 1] > 1)
+      if (readings[i+1] - readings[i] <= 1)
 	{
-	  highRange = i - 1;
-	  readingsCount = countInContinuousRange (lowRange, highRange);
-	    storeCalculatedRageReadings(readings[highRange],readings[lowRange],readingsCount,numOfContinuosSamples,rangeAndNoOfReadings);
-      fpPrintOnConsole (rangeAndNoOfReadings,numOfContinuosSamples); 
-	  numOfContinuosSamples++;
-	  highRange = i;
-	  lowRange = i;
-
+	 
+	  rangeAndNoOfReadings [numOfContinuosSamples].upperLimit = readings[i+1] ;
+	  rangeAndNoOfReadings [numOfContinuosSamples].readingsCount++;
 
 	}
-      else if (i == length - 1)
+      else
 	{
-	  highRange = i;
-	  readingsCount = countInContinuousRange (lowRange, highRange);
-	    storeCalculatedRageReadings(readings[highRange],readings[lowRange],readingsCount,numOfContinuosSamples,rangeAndNoOfReadings);
-	  fpPrintOnConsole (rangeAndNoOfReadings,numOfContinuosSamples);
-	  numOfContinuosSamples++;
+	    
+	          numOfContinuosSamples++;
+	          output[numOfContinuosSamples].readingsCount++;
+		  rangeAndNoOfReadings [numOfContinuosSamples].lowerLimit = readings[i+1] ;
+		  rangeAndNoOfReadings [numOfContinuosSamples].upperLimit = readings[i+1] ;
+	 
 	}
+
     }
+    printOnConsole (rangeAndNoOfReadings ,numOfContinuosSamples);
   return rangeAndNoOfReadings;
 }
 
