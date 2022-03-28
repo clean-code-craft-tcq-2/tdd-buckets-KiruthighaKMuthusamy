@@ -1,10 +1,5 @@
 #include"frequentCurrentRange.h"
 
-int countInContinuousRange (int lowRange, int highRange)
-{
-  return highRange - lowRange + 1;
-}
-
 rangeAndReadings* findContinuousSamples (int *readings, int length, void(*fpPrintOnConsole)(rangeAndReadings*,int))
 {
   rangeAndReadings *rangeAndNoOfReadings =
@@ -33,7 +28,7 @@ rangeAndReadings* findContinuousSamples (int *readings, int length, void(*fpPrin
 
     }
     fpPrintOnConsole (rangeAndNoOfReadings ,numOfContinuosSamples);
-  return rangeAndNoOfReadings;
+    return rangeAndNoOfReadings;
 }
 
 rangeAndReadings* findRangeAndReadings (int *readings, int length,bool(*fpValidateArray)(int* ,int ),void(*fpPrintOnConsole)(rangeAndReadings*,int) , void(*fpPrintErrorMessage)(void))
@@ -44,7 +39,7 @@ rangeAndReadings* findRangeAndReadings (int *readings, int length,bool(*fpValida
   {
    int* duplicateArray = copyInputArray(readings,  length);
   sortInputArray(duplicateArray, length);
-   numOfContinuosSamples = findContinuousSamples (duplicateArray, length,fpPrintOnConsole);
+  numOfContinuosSamples = findContinuousSamples (duplicateArray, length,fpPrintOnConsole);
   return numOfContinuosSamples;
   }
   else
