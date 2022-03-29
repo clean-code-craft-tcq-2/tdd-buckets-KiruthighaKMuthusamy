@@ -53,17 +53,17 @@ SCENARIO("convert 12bit A2D Internal Values to absolute Physical values (0 - 409
 {
     GIVEN("an array of values from 0 to 4094 ")
     {
-        float arr[7] = {0,250,540,1000,1500,2500.3758,4094};
-        int expectedOutput[7] = {0,1,1,2,4,6,9,10};
+        float arr[8] = {0,250,540,1000,1500,2500.3758,4094};
+        int expectedOutput[8] = {0,1,1,2,4,6,9,10};
 
         WHEN("Internal value to Physical Value conversion function conversion InternalToPhysical() is called with input array, Resolution and Physical range")
         {
-            int actualOutput = conversionInternalToPhysical (arr,7,12,0,10,&printErrorMessage);
+            int* actualOutput = conversionInternalToPhysical (arr,8,12,0,10,&printErrorMessage);
             THEN("The Physical value array is returned for the given internal array input ")
             {
-                for(int i=0;i<arrayLength;i++)
+                for(int i=0;i<8;i++)
 	            {
-		      REQUIRE(expectedOutput[i] == actualOutput[i];
+		      REQUIRE(expectedOutput[i] == actualOutput[i]);
 		    }
             }
         }
@@ -79,12 +79,12 @@ SCENARIO("convert 10bit A2D Internal Values to absolute Physical values (0 - 102
 
         WHEN("Internal value to Physical Value conversion function conversion InternalToPhysical() is called with input array, Resolution and Physical range")
         {
-            int actualOutput = conversionInternalToPhysical (arr,7,10,-15,15,&printErrorMessage);
+            int *actualOutput = conversionInternalToPhysical (arr,7,10,-15,15,&printErrorMessage);
             THEN("The Physical value array is returned for the given internal array input ")
             {                
-	          for(int i=0;i<arrayLength;i++)
+	          for(int i=0;i<7;i++)
 	            {
-		      REQUIRE(expectedOutput[i] == actualOutput[i];
+		      REQUIRE(expectedOutput[i] == actualOutput[i]);
 		    }
             }
         }
@@ -95,7 +95,7 @@ SCENARIO("Checks the charging current range and its occurences with given raw  i
 {
     GIVEN("an array of raw values from 0 to 4094 ")
     {
-        float arr[7] = {0,250,540,1000,1500,2500.3758,4094};
+        float arr[8] = {0,250,540,1000,1500,2500.3758,4094};
         rangeAndReadings expectedOutput[4] = {{0,2,4},{4,4,1},{6,6,1},{9,10,2}};
         WHEN("calculate range and readings function convertAndCollectRangs() is called with raw value input array, Resolution and Physical range")
         {
