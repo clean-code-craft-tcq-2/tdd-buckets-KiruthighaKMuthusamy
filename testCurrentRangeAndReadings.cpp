@@ -53,7 +53,7 @@ SCENARIO("convert 12bit A2D Internal Values to absolute Physical values (0 - 409
 {
     GIVEN("an array of values from 0 to 4094 ")
     {
-        float arr[8] = {0,250,540,1000,1500,2500.3758,4094};
+        float arr[8] = {0,250,540,1000,1500,2500,3758,4094};
         int expectedOutput[8] = {0,1,1,2,4,6,9,10};
 
         WHEN("Internal value to Physical Value conversion function conversion InternalToPhysical() is called with input array, Resolution and Physical range")
