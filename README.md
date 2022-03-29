@@ -1,4 +1,6 @@
-# Developer's Hint to the reviewer - Week1:
+# Developer's Hint to the reviewer - Week2:
+
+The extensions are added in concersion.c and conversion.h fi;es.
 
 
 # Developer's Hint to the reviewer - Week1:
