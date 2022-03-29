@@ -95,8 +95,8 @@ SCENARIO("Checks the charging current range and its occurences with given raw  i
 {
     GIVEN("an array of raw values from 0 to 4094 ")
     {
-        float arr[8] = {0,250,540,1000,1500,2500.3758,4094};
-        rangeAndReadings expectedOutput[4] = {{0,2,4},{4,4,1},{6,6,1},{9,10,2}};
+        float arr[8] = {0,250,540,1000,1500,2500,3758,4094};
+        rangeAndReadings expectedOutput[4] = {{2,0,4},{4,4,1},{6,6,1},{10,9,2}};
         WHEN("calculate range and readings function convertAndCollectRangs() is called with raw value input array, Resolution and Physical range")
         {
            rangeAndReadings *actualOutput = convertAndCollectRangs (arr,8,12,0,10,&validateArray,&printOnConsole,&printErrorMessage);
