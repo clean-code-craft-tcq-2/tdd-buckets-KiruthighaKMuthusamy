@@ -20,6 +20,7 @@ void isActualOutputExpectedOutputsame(rangeAndReadings *expectedOutput,rangeAndR
 	}
 }
 
+
 /**************************************************Test Case Week1*******************************************************/
 
 
@@ -57,10 +58,13 @@ SCENARIO("convert 12bit A2D Internal Values to absolute Physical values (0 - 409
 
         WHEN("Internal value to Physical Value conversion function conversion InternalToPhysical() is called with input array, Resolution and Physical range")
         {
-            int actualOutput = conversionInternalToPhysical (arr,7,12,0,10,&PrintErrorMessage);
+            int actualOutput = conversionInternalToPhysical (arr,7,12,0,10,&printErrorMessage);
             THEN("The Physical value array is returned for the given internal array input ")
             {
-                isActualOutputExpectedOutputsame(expectedOutput,actualOutput,7);
+                for(int i=0;i<arrayLength;i++)
+	            {
+		      REQUIRE(expectedOutput[i] == actualOutput[i];
+		    }
             }
         }
     }
@@ -75,10 +79,13 @@ SCENARIO("convert 10bit A2D Internal Values to absolute Physical values (0 - 102
 
         WHEN("Internal value to Physical Value conversion function conversion InternalToPhysical() is called with input array, Resolution and Physical range")
         {
-            int actualOutput = conversionInternalToPhysical (arr,7,10,-15,15,&PrintErrorMessage);
+            int actualOutput = conversionInternalToPhysical (arr,7,10,-15,15,&printErrorMessage);
             THEN("The Physical value array is returned for the given internal array input ")
-            {
-                isActualOutputExpectedOutputsame(expectedOutput,actualOutput,7);
+            {                
+	          for(int i=0;i<arrayLength;i++)
+	            {
+		      REQUIRE(expectedOutput[i] == actualOutput[i];
+		    }
             }
         }
     }
@@ -89,11 +96,10 @@ SCENARIO("Checks the charging current range and its occurences with given raw  i
     GIVEN("an array of raw values from 0 to 4094 ")
     {
         float arr[7] = {0,250,540,1000,1500,2500.3758,4094};
-        int expectedOutput[7] = {0,1,1,2,4,6,9,10};
-        rangeAndReadings *ExpectedOutput = {(0,2,4},{4,4,1},{6,6,1},{9,10,2}};
+        rangeAndReadings expectedOutput[4] = {{0,2,4},{4,4,1},{6,6,1},{9,10,2}};
         WHEN("calculate range and readings function convertAndCollectRangs() is called with raw value input array, Resolution and Physical range")
         {
-           rangeAndReadings *actualOutput = convertAndCollectRangs (arr,7,10,-15,15,&ValidateArray,&PrintOnConsole,&PrintErrorMessage);
+           rangeAndReadings *actualOutput = convertAndCollectRangs (arr,7,10,-15,15,&validateArray,&printOnConsole,&printErrorMessage);
             THEN("The Physical range and readings are returned for the given internal array input ")
             {
                 isActualOutputExpectedOutputsame(expectedOutput,actualOutput,4);
