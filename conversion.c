@@ -57,3 +57,8 @@ int *conversionInternalToPhysical (float *rawValues,int arraysize, int A2D_resol
    return absValue;
 }
  
+rangeAndReadings* convertAndCollectRangs(float *rawValues,int arraysize,int A2D_resolution,float PhyMin, float PhyMax,void(*fpPrintOnConsole)(rangeAndReadings*,int) , void(*fpPrintErrorMessage)(void))
+	{
+		int * currentRange = conversionInternalToPhysical (rawValues, arraysize,  A2D_resolution, PhyMin, PhyMax,fpPrintErrorMessage);
+		return (findRangeAndReadings (currentRange ,arraysize,fpValidateArray,fpPrintOnConsole,fpPrintErrorMessage) ; );
+	}
