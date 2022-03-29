@@ -3,6 +3,7 @@
 The extensions are added in concersion.c and conversion.h files.
 
 ##Conversion logic:
+
 Step 1 : Calculate Raw value of the converter e.g. (2^12 - 2)== for 12 bit converter
 
 Step 2 : Calculate Resolution for Internal to Physical conversion
