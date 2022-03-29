@@ -20,7 +20,7 @@ void isActualOutputExpectedOutputsame(rangeAndReadings *expectedOutput,rangeAndR
 	}
 }
 
-*************************************************/*Test Case Week1*/******************************************************
+/**************************************************Test Case Week1*******************************************************/
 
 
 TEST_CASE("Checks the charging current range and its occurences with large unsorted samples") {                                      //SAME TEST CASE  PASSED for the model input given
@@ -44,7 +44,7 @@ TEST_CASE("Checks the charging current range for invalid Array ie negative value
 	isActualOutputExpectedOutputsame(expectedOutput,actualOutput,1);
 		}
 		
-*************************************************/*Test Case Week2(Tried BDD*)*/******************************************************
+/**************************************************Test Case Week2(Tried BDD*)*******************************************************/
 
 
 
