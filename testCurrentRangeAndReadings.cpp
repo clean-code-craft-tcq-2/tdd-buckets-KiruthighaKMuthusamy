@@ -99,7 +99,7 @@ SCENARIO("Checks the charging current range and its occurences with given raw  i
         rangeAndReadings expectedOutput[4] = {{0,2,4},{4,4,1},{6,6,1},{9,10,2}};
         WHEN("calculate range and readings function convertAndCollectRangs() is called with raw value input array, Resolution and Physical range")
         {
-           rangeAndReadings *actualOutput = convertAndCollectRangs (arr,7,10,-15,15,&validateArray,&printOnConsole,&printErrorMessage);
+           rangeAndReadings *actualOutput = convertAndCollectRangs (arr,8,12,0,10,&validateArray,&printOnConsole,&printErrorMessage);
             THEN("The Physical range and readings are returned for the given internal array input ")
             {
                 isActualOutputExpectedOutputsame(expectedOutput,actualOutput,4);
