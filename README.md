@@ -4,13 +4,13 @@ The extensions are added in concersion.c and conversion.h files.
 
 ##Conversion logic:
 
-Step 1 : Calculate Raw value of the converter e.g. (2^12 - 2)== for 12 bit converter
+Step 1 : Calculate Maximum Raw value of the converter e.g. (2^12 - 2)== for 12 bit converter
 
 Step 2 : Calculate Resolution for Internal to Physical conversion
 
 Step 3 : Caluclate Offset using Minimum Physical Value
 
-Step 4 : Execute the Conversion
+Step 4 : Execute the Conversion  (Input raw value * Resolution + Offset)
 
 Step 5 : Calculate the Roundoff value
 
