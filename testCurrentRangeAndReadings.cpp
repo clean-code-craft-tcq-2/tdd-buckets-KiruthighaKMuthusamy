@@ -75,7 +75,7 @@ SCENARIO("convert 10bit A2D Internal Values to absolute Physical values (0 - 102
     GIVEN("an array of values from 0 to 1022 ")
     {
         float arr[7] = {0,250,540,1000,750,1022,900};
-        int expectedOutput[7] = {15,8,1,14,4,7,15,11};
+        int expectedOutput[7] = {15,8,1,14,7,15,11};
 
         WHEN("Internal value to Physical Value conversion function conversion InternalToPhysical() is called with input array, Resolution and Physical range")
         {
